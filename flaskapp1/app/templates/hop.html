@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{hop.variety}} - {{hop.country}}</h1>
+<p>{{hop.description}}</p>
+<h2>Offers</h2>
+
+<ul>
+{% for offer in offers %}
+<li><a href="{{offer.url}}"><b>{{offer.distributor.name}}</b>, {{offer.form}},
+{% for pricebreak in offer.pricebreaks %}
+{{pricebreak.quantity}}: {{pricebreak.price}}
+{% endfor %}
+</a>
+</li>
+{% endfor %}
+</ul>
+
+{% endblock %}

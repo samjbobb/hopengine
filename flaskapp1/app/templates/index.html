@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Hops</h1>
+<ul>
+{% for hop in hops %}
+<li><a href="hop/{{hop.id}}">{{hop.variety}} - {{hop.country}}</a></li>
+{% endfor %}
+</ul>
+{% endblock %}
